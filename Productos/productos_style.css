@@ -633,7 +633,7 @@ nav ul li a.active::before {
 }
 
 /* ========================================
-   BOMBILLAS SECTION
+   BOMBILLAS SECTION - CENTRADA
    ======================================== */
 .bombillas-section {
     padding: 120px 8%;
@@ -641,8 +641,9 @@ nav ul li a.active::before {
 }
 
 .bombillas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
     margin-top: 60px;
 }
@@ -656,6 +657,8 @@ nav ul li a.active::before {
     position: relative;
     cursor: pointer;
     animation: cardAppear 0.6s ease both;
+    width: 100%;
+    max-width: 400px; /* Tamaño consistente con los mates */
 }
 
 .bombilla-card:nth-child(1) { animation-delay: 0.1s; }
@@ -853,7 +856,6 @@ footer {
     }
     
     .bombillas-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
     
@@ -899,7 +901,8 @@ footer {
     }
     
     .bombillas-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
         gap: 30px;
     }
 
