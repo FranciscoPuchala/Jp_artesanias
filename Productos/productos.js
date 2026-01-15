@@ -22,7 +22,7 @@ const handleScroll = () => {
 
 // Animación de aparición para las tarjetas al hacer scroll
 const observeCards = () => {
-    const cards = document.querySelectorAll('.model-card');
+    const cards = document.querySelectorAll('.model-card, .producto-card');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -80,16 +80,18 @@ const initModelButtons = () => {
     });
 };
 
-// Funcionalidad para los botones de selección de bombilla
-const initBombillaButtons = () => {
-    const selectButtons = document.querySelectorAll('.select-bombilla-btn');
+// Funcionalidad para los botones de selección de otros productos
+const initOtrosProductosButtons = () => {
+    const selectButtons = document.querySelectorAll('.select-producto-btn');
     
     selectButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            const bombillaType = button.getAttribute('data-bombilla');
+            const productoType = button.getAttribute('data-producto');
             
-            // Guardar la bombilla seleccionada en localStorage
-            localStorage.setItem('selectedBombilla', bombillaType);
+            // Guardar el producto seleccionado
+            const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || {};
+            selectedProducts[productoType] = true;
+            localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
             
             // Animación de click
             button.style.transform = 'scale(0.95)';
@@ -97,27 +99,38 @@ const initBombillaButtons = () => {
                 button.style.transform = '';
             }, 150);
             
-            // Aquí redirigirías a la página de personalización
-            // window.location.href = `personalizar-bombilla.html?bombilla=${bombillaType}`;
-            
-            console.log(`Bombilla seleccionada: ${bombillaType}`);
+            console.log(`Producto seleccionado: ${productoType}`);
             
             // Feedback visual temporal
-            showNotification(`Has seleccionado la bombilla ${bombillaType.charAt(0).toUpperCase() + bombillaType.slice(1)}`);
+            showNotification(`Explorando ${getProductoName(productoType)}`);
+            
+            // Aquí redirigirías a la página específica del producto
+            // window.location.href = `${productoType}.html`;
         });
     });
     
     // También hacer clickeable toda la tarjeta
-    const bombillaCards = document.querySelectorAll('.bombilla-card');
-    bombillaCards.forEach(card => {
+    const productoCards = document.querySelectorAll('.producto-card');
+    productoCards.forEach(card => {
         card.addEventListener('click', (e) => {
             // Si el click no fue en el botón, simular click en el botón
-            if (!e.target.classList.contains('select-bombilla-btn') && !e.target.classList.contains('btn-arrow')) {
-                const button = card.querySelector('.select-bombilla-btn');
+            if (!e.target.classList.contains('select-producto-btn') && !e.target.classList.contains('btn-arrow')) {
+                const button = card.querySelector('.select-producto-btn');
                 button.click();
             }
         });
     });
+};
+
+// Función para obtener el nombre completo del producto
+const getProductoName = (type) => {
+    const nombres = {
+        'bombillas': 'Bombillas Personalizadas',
+        'yerbas': 'Yerbas Premium',
+        'termos': 'Termos',
+        'materas': 'Materas'
+    };
+    return nombres[type] || type;
 };
 
 // Función para mostrar notificaciones
@@ -208,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
     observeCards();
     initModelButtons();
-    initBombillaButtons();
+    initOtrosProductosButtons();
     addAnimationStyles();
     initParallax();
     initMobileMenu();
