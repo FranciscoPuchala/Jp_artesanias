@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
                         // Redirige a la página de producto.
-                        window.location.href = `./Producto/pagina_producto.html`;
+                       // window.location.href = `./Producto/pagina_producto.html`;
                     } else {
                         console.error('Error al capturar datos para la redirección a la página de producto.');
                     }

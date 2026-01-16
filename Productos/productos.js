@@ -150,7 +150,7 @@ const showNotification = (message) => {
         position: fixed;
         top: 100px;
         right: 30px;
-        background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+        background: linear-gradient(135deg, #055c66 0%, #055c66 100%);
         color: white;
         padding: 20px 30px;
         border-radius: 12px;

@@ -23,7 +23,7 @@ header {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
     padding: 0 8%;
     z-index: 1000;
-    border-bottom: 1px solid rgba(93, 173, 226, 0.1);
+    border-bottom: 1px solid rgba(5, 92, 102, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     animation: slideDown 0.6s ease;
 }
@@ -75,7 +75,7 @@ header.scrolled .header-container {
     position: absolute;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, rgba(93, 173, 226, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(5, 92, 102, 0.1) 0%, rgba(4, 73, 82, 0.1) 100%);
     border-radius: 50%;
     left: -10px;
     top: 50%;
@@ -92,7 +92,7 @@ header.scrolled .header-container {
 .logo-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -101,10 +101,20 @@ header.scrolled .header-container {
     font-weight: 700;
     font-size: 1.5em;
     font-family: 'Playfair Display', serif;
-    box-shadow: 0 4px 15px rgba(93, 173, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(5, 92, 102, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+}
+
+/* Imagen dentro del logo-icon */
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Efecto de brillo que se mueve */
@@ -118,6 +128,7 @@ header.scrolled .header-container {
     background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
     transform: rotate(45deg);
     animation: shine 3s infinite;
+    z-index: 3;
 }
 
 @keyframes shine {
@@ -127,7 +138,7 @@ header.scrolled .header-container {
 
 .logo:hover .logo-icon {
     transform: translateY(-3px) rotate(-5deg);
-    box-shadow: 0 8px 25px rgba(93, 173, 226, 0.5);
+    box-shadow: 0 8px 25px rgba(5, 92, 102, 0.5);
 }
 
 /* Texto del logo */
@@ -146,7 +157,7 @@ header.scrolled .header-container {
 .logo-subtitle {
     font-size: 0.5em;
     font-weight: 400;
-    color: #5dade2;
+    color: #055c66;
     font-family: 'Inter', sans-serif;
     letter-spacing: 2px;
     display: block;
@@ -156,7 +167,7 @@ header.scrolled .header-container {
 }
 
 .logo:hover h1 {
-    color: #5dade2;
+    color: #055c66;
 }
 
 .logo:hover .logo-subtitle {
@@ -205,7 +216,7 @@ nav ul li a::before {
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #5dade2, #3498db);
+    background: linear-gradient(90deg, #055c66, #044952);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(-50%);
 }
@@ -222,7 +233,7 @@ nav ul li a::after {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(93, 173, 226, 0.1);
+    background: rgba(5, 92, 102, 0.1);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.5s ease;
@@ -236,12 +247,12 @@ nav ul li a:hover::after {
 }
 
 nav ul li a:hover {
-    color: #5dade2;
+    color: #055c66;
 }
 
 /* Indicador de página activa */
 nav ul li a.active {
-    color: #5dade2;
+    color: #055c66;
 }
 
 nav ul li a.active::before {
@@ -280,7 +291,7 @@ nav ul li a.active::before {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(93, 173, 226, 0.3);
+    background: rgba(5, 92, 102, 0.3);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.6s ease, height 0.6s ease;
@@ -294,10 +305,11 @@ nav ul li a.active::before {
 
 .cart-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(93, 173, 226, 0.4);
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    box-shadow: 0 8px 30px rgba(5, 92, 102, 0.4);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
 }
 
+/* Badge del contador del carrito */
 
 
 @keyframes pulse {
@@ -322,6 +334,18 @@ nav ul li a.active::before {
     transition: all 0.3s ease;
 }
 
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 /* ========================================
    HERO SECTION
    ======================================== */
@@ -334,7 +358,7 @@ nav ul li a.active::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     position: relative;
     overflow: hidden;
     padding: 100px 8%;
@@ -458,7 +482,7 @@ nav ul li a.active::before {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #5dade2, #3498db);
+    background: linear-gradient(90deg, #055c66, #044952);
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
@@ -469,7 +493,7 @@ nav ul li a.active::before {
 
 .info-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(93, 173, 226, 0.2);
+    box-shadow: 0 20px 50px rgba(5, 92, 102, 0.2);
 }
 
 .card-icon-wrapper {
@@ -486,18 +510,18 @@ nav ul li a.active::before {
     width: 70px;
     height: 70px;
     margin: 0 auto;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(93, 173, 226, 0.3);
+    box-shadow: 0 8px 20px rgba(5, 92, 102, 0.3);
     transition: all 0.4s ease;
 }
 
 .info-card:hover .card-icon {
     transform: rotateY(360deg);
-    box-shadow: 0 12px 30px rgba(93, 173, 226, 0.5);
+    box-shadow: 0 12px 30px rgba(5, 92, 102, 0.5);
 }
 
 .card-icon svg {
@@ -520,7 +544,7 @@ nav ul li a.active::before {
 }
 
 .card-link {
-    color: #5dade2;
+    color: #055c66;
     text-decoration: none;
     font-weight: 600;
     font-size: 1em;
@@ -529,7 +553,7 @@ nav ul li a.active::before {
 }
 
 .card-link:hover {
-    color: #3498db;
+    color: #044952;
     transform: translateX(5px);
 }
 
@@ -543,19 +567,19 @@ nav ul li a.active::before {
 .social-link {
     width: 45px;
     height: 45px;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(93, 173, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(5, 92, 102, 0.3);
 }
 
 .social-link:hover {
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(93, 173, 226, 0.5);
+    box-shadow: 0 8px 25px rgba(5, 92, 102, 0.5);
 }
 
 .social-link svg {
@@ -589,7 +613,7 @@ nav ul li a.active::before {
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, #5dade2, #3498db);
+    background: linear-gradient(90deg, #055c66, #044952);
 }
 
 .form-header {
@@ -659,8 +683,8 @@ nav ul li a.active::before {
 
 .form-input:focus {
     outline: none;
-    border-color: #5dade2;
-    box-shadow: 0 0 0 4px rgba(93, 173, 226, 0.1);
+    border-color: #055c66;
+    box-shadow: 0 0 0 4px rgba(5, 92, 102, 0.1);
     transform: translateY(-2px);
 }
 
@@ -687,12 +711,12 @@ nav ul li a.active::before {
 }
 
 .form-input:focus + .input-icon {
-    color: #5dade2;
+    color: #055c66;
     transform: translateY(-50%) scale(1.1);
 }
 
 .form-textarea:focus + .textarea-icon {
-    color: #5dade2;
+    color: #055c66;
     transform: scale(1.1);
 }
 
@@ -702,7 +726,7 @@ nav ul li a.active::before {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     color: #ffffff;
     border: none;
     padding: 18px 50px;
@@ -715,7 +739,7 @@ nav ul li a.active::before {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 8px 25px rgba(93, 173, 226, 0.3);
+    box-shadow: 0 8px 25px rgba(5, 92, 102, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -740,7 +764,7 @@ nav ul li a.active::before {
 
 .submit-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(93, 173, 226, 0.5);
+    box-shadow: 0 15px 40px rgba(5, 92, 102, 0.5);
 }
 
 .submit-btn:active {
@@ -777,7 +801,7 @@ nav ul li a.active::before {
 .success-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -820,7 +844,7 @@ nav ul li a.active::before {
 .map-container {
     position: relative;
     height: 400px;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
 }
 
 .map-overlay {
@@ -850,7 +874,7 @@ nav ul li a.active::before {
 
 .map-overlay p {
     font-size: 1.2em;
-    color: #5dade2;
+    color: #055c66;
     margin: 0;
     font-weight: 600;
 }
@@ -883,7 +907,7 @@ footer {
     background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
     color: #eee;
     padding: 60px 8% 20px 8%;
-    border-top: 3px solid #5dade2;
+    border-top: 3px solid #055c66;
 }
 
 .footer-content {
@@ -902,7 +926,7 @@ footer {
 
 .footer-section h3 {
     font-size: 1.3em;
-    border-bottom: 2px solid #5dade2;
+    border-bottom: 2px solid #055c66;
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-weight: 600;
@@ -926,12 +950,13 @@ footer {
 }
 
 .footer-section a:hover {
-    color: #5dade2;
+    color: #055c66;
     transform: translateX(5px);
 }
 
 .footer-bottom {
     text-align: center;
+    margin-top: 40px;
     padding-top: 20px;
     border-top: 1px solid #333;
     color: #888;
@@ -941,8 +966,14 @@ footer {
    RESPONSIVE
    ======================================== */
 @media (max-width: 1024px) {
-    .info-cards-grid {
+    .models-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .otros-productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
     
     .hero-title {
@@ -952,24 +983,54 @@ footer {
 
 @media (max-width: 768px) {
     header {
-        padding: 1rem 5%;
+        padding: 0 5%;
     }
 
-    .header-container {
-        flex-wrap: wrap;
+    .menu-toggle {
+        display: flex;
     }
 
     nav {
-        order: 3;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 30px 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        flex: none;
         width: 100%;
-        padding-left: 0;
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
     }
 
     nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 20px;
-        padding-top: 15px;
+        justify-content: center;
+    }
+
+    .logo h1 {
+        font-size: 1.4em;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+
+    .cart-button {
+        padding: 10px 20px;
+        font-size: 0.85em;
     }
 
     .hero-title {
@@ -981,41 +1042,21 @@ footer {
         font-size: 1.1em;
     }
 
-    .container {
-        padding: 0 5%;
-    }
-
-    .info-cards-grid {
+    .models-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 30px;
     }
-
-    .form-wrapper {
-        padding: 40px 25px;
-    }
-
-    .form-row {
+    
+    .otros-productos-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .section-title {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
-    .map-overlay {
-        padding: 30px 40px;
-    }
-
-    .map-overlay h3 {
-        font-size: 1.5em;
-    }
-
-    .map-overlay p {
-        font-size: 1em;
-    }
-
-    .contact-info-section,
-    .contact-form-section {
-        padding: 60px 0;
+    .models-section {
+        padding: 80px 5%;
     }
 }

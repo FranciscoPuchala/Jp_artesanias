@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
 
 :root {
-    --primary-blue: #5dade2;
+    --primary: #055c66;
+    --primary-dark: #044952;
     --dark-text: #1a1a1a;
     --border-color: #e0e0e0;
     --light-gray: #f8f9fa;
@@ -18,7 +19,7 @@ body {
     line-height: 1.8;
 }
 
-/* ======================================== HEADER - COPIADO DE PRODUCTOS ======================================== */
+/* ======================================== HEADER ======================================== */
 header {
     position: fixed;
     top: 0;
@@ -30,7 +31,7 @@ header {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
     padding: 0 8%;
     z-index: 1000;
-    border-bottom: 1px solid rgba(93, 173, 226, 0.1);
+    border-bottom: 1px solid rgba(5, 92, 102, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     animation: slideDown 0.6s ease;
 }
@@ -57,6 +58,7 @@ header.scrolled .header-container {
     height: 70px;
 }
 
+/* Logo con animaciones */
 .logo {
     position: relative;
     z-index: 10;
@@ -73,12 +75,13 @@ header.scrolled .header-container {
     position: relative;
 }
 
+/* Círculo decorativo animado detrás del logo */
 .logo::before {
     content: '';
     position: absolute;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, rgba(93, 173, 226, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(5, 92, 102, 0.1) 0%, rgba(4, 73, 82, 0.1) 100%);
     border-radius: 50%;
     left: -10px;
     top: 50%;
@@ -91,10 +94,11 @@ header.scrolled .header-container {
     transform: translateY(-50%) scale(1);
 }
 
+/* Icono de la empresa con efecto 3D */
 .logo-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -103,12 +107,23 @@ header.scrolled .header-container {
     font-weight: 700;
     font-size: 1.5em;
     font-family: 'Playfair Display', serif;
-    box-shadow: 0 4px 15px rgba(93, 173, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(5, 92, 102, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
+/* Imagen dentro del logo-icon */
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Efecto de brillo que se mueve */
 .logo-icon::before {
     content: '';
     position: absolute;
@@ -119,6 +134,7 @@ header.scrolled .header-container {
     background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
     transform: rotate(45deg);
     animation: shine 3s infinite;
+    z-index: 3;
 }
 
 @keyframes shine {
@@ -128,9 +144,10 @@ header.scrolled .header-container {
 
 .logo:hover .logo-icon {
     transform: translateY(-3px) rotate(-5deg);
-    box-shadow: 0 8px 25px rgba(93, 173, 226, 0.5);
+    box-shadow: 0 8px 25px rgba(5, 92, 102, 0.5);
 }
 
+/* Texto del logo */
 .logo h1 {
     margin: 0;
     font-size: 1.8em;
@@ -146,7 +163,7 @@ header.scrolled .header-container {
 .logo-subtitle {
     font-size: 0.5em;
     font-weight: 400;
-    color: #5dade2;
+    color: #055c66;
     font-family: 'Inter', sans-serif;
     letter-spacing: 2px;
     display: block;
@@ -156,7 +173,7 @@ header.scrolled .header-container {
 }
 
 .logo:hover h1 {
-    color: #5dade2;
+    color: #055c66;
 }
 
 .logo:hover .logo-subtitle {
@@ -203,7 +220,7 @@ nav ul li a::before {
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #5dade2, #3498db);
+    background: linear-gradient(90deg, #055c66, #044952);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(-50%);
 }
@@ -219,7 +236,7 @@ nav ul li a::after {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(93, 173, 226, 0.1);
+    background: rgba(5, 92, 102, 0.1);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.5s ease;
@@ -233,11 +250,11 @@ nav ul li a:hover::after {
 }
 
 nav ul li a:hover {
-    color: #5dade2;
+    color: #055c66;
 }
 
 nav ul li a.active {
-    color: #5dade2;
+    color: #055c66;
 }
 
 nav ul li a.active::before {
@@ -274,7 +291,7 @@ nav ul li a.active::before {
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(93, 173, 226, 0.3);
+    background: rgba(5, 92, 102, 0.3);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.6s ease, height 0.6s ease;
@@ -288,11 +305,9 @@ nav ul li a.active::before {
 
 .cart-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(93, 173, 226, 0.4);
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    box-shadow: 0 8px 30px rgba(5, 92, 102, 0.4);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
 }
-
-
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
@@ -440,8 +455,8 @@ nav ul li a.active::before {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(5, 92, 102, 0.1);
 }
 
 .form-row {
@@ -480,13 +495,13 @@ nav ul li a.active::before {
 }
 
 .payment-option input[type="radio"]:checked + .payment-card {
-    border-color: var(--primary-blue);
-    background: linear-gradient(135deg, rgba(93, 173, 226, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
-    box-shadow: 0 4px 15px rgba(93, 173, 226, 0.15);
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(5, 92, 102, 0.05) 0%, rgba(4, 73, 82, 0.05) 100%);
+    box-shadow: 0 4px 15px rgba(5, 92, 102, 0.15);
 }
 
 .payment-card:hover {
-    border-color: var(--primary-blue);
+    border-color: var(--primary);
     transform: translateY(-3px);
 }
 
@@ -522,9 +537,9 @@ nav ul li a.active::before {
 }
 
 .submit-order-btn:hover {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #3498db 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(93, 173, 226, 0.4);
+    box-shadow: 0 8px 25px rgba(5, 92, 102, 0.4);
 }
 
 .btn-arrow {
@@ -620,7 +635,7 @@ nav ul li a.active::before {
 }
 
 .order-item-price {
-    color: var(--primary-blue);
+    color: var(--primary);
     font-weight: 700;
 }
 
@@ -659,7 +674,7 @@ nav ul li a.active::before {
 .secure-payment {
     text-align: center;
     padding: 15px;
-    background: linear-gradient(135deg, rgba(93, 173, 226, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(5, 92, 102, 0.05) 0%, rgba(4, 73, 82, 0.05) 100%);
     border-radius: 10px;
     font-size: 0.9em;
     color: #666;
@@ -689,7 +704,7 @@ nav ul li a.active::before {
 .trust-icon {
     width: 30px;
     height: 30px;
-    background: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    background: linear-gradient(135deg, #055c66 0%, #044952 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -709,7 +724,7 @@ footer {
     background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
     color: #eee;
     padding: 60px 8% 20px 8%;
-    border-top: 3px solid #5dade2;
+    border-top: 3px solid #055c66;
     margin-top: 80px;
 }
 
