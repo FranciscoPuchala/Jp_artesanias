@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito - JP Artesanías</title>
+    <link rel="stylesheet" href="./estilo_pagina_carrito.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <!-- Logo con icono -->
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon">JP</div>
+                    <h1>JP Artesanías<br><span class="logo-subtitle">Calidad Artesanal</span></h1>
+                </a>
+            </div>
+
+            <!-- Menú hamburguesa para móvil -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navegación -->
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../Productos/Productos.html">Productos</a></li>
+                    <li><a href="../Contacto/contactos.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón del carrito -->
+            <div class="search-and-cart">
+                <a href="./pagina_carrito.html" class="cart-button">
+                    🛒 Carrito
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-main-container">
+        <section class="cart-header-section">
+            <h2 class="section-title">Tu Carrito</h2>
+            <p class="section-subtitle">Revisa tus productos antes de finalizar la compra artesanal.</p>
+        </section>
+
+        <div class="cart-grid">
+            <!-- Columna de Productos -->
+            <section class="cart-items-column">
+                <div id="cart-container" class="cart-items-wrapper">
+                    <!-- Los productos se cargarán aquí dinámicamente -->
+                    <div class="loading-spinner">Cargando tus tesoros...</div>
+                </div>
+                
+                <div class="continue-shopping">
+                    <a href="../Productos/Productos.html">← Continuar comprando</a>
+                </div>
+            </section>
+
+            <!-- Columna de Resumen -->
+            <aside class="cart-summary-column">
+                <div class="summary-card">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="summary-details">
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span id="subtotal-price">$0</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Envío</span>
+                            <span class="free-shipping">Gratis</span>
+                        </div>
+                        <hr>
+                        <div class="summary-line total">
+                            <span>Total</span>
+                            <span id="total-price">$0</span>
+                        </div>
+                    </div>
+                    <button id="checkout-btn" class="checkout-button">
+                        Finalizar Compra
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <p class="secure-payment">🔒 Pago seguro y procesado artesanalmente</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer id="contacto-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 JP Artesanías. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./carrito.js"></script>
+</body>
+</html>
