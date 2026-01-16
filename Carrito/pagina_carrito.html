@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Carrito - JP Artesanías</title>
     <link rel="stylesheet" href="./estilo_pagina_carrito.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Partículas de fondo animadas -->
+<div class="particles-bg">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
 
 <header>
     <div class="header-container">
         <div class="logo">
             <a href="../index.html">
                 <div class="logo-icon">JP</div>
-                <h1>JP Artesanías</h1>
+                <div>
+                    <h1>JP Artesanías<span class="logo-subtitle">Calidad Premium</span></h1>
+                </div>
             </a>
         </div>
 
@@ -26,57 +37,138 @@
             </ul>
         </nav>
 
-        <a href="./pagina_carrito.html" class="cart-button">
+        <div class="header-actions">
+            <a href="./Carrito/pagina_carrito.html" class="cart-button">
             🛒 Carrito <span class="cart-count">0</span>
         </a>
+        </div>
     </div>
 </header>
 
 <main class="cart-main-container">
-
-    <h2>Tu Carrito</h2>
+    
+    <!-- Hero Section -->
+    <div class="cart-hero">
+        <div class="hero-content">
+            <div class="hero-badge">🛍️ Carrito de Compras</div>
+            <h1 class="hero-title">Tu Selección</h1>
+            <p class="hero-subtitle">Revisa y confirma tus productos seleccionados</p>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+    </div>
 
     <div class="cart-grid">
 
         <!-- Productos -->
         <section class="cart-items-column">
+            <div class="section-header">
+                <h2>Productos</h2>
+                <div class="item-count-badge">
+                    <span id="items-count">0</span> items
+                </div>
+            </div>
+
             <div id="cart-container" class="cart-items-wrapper">
-                <p>Tu carrito aparecerá aquí</p>
+                <!-- Los productos se cargarán aquí dinámicamente -->
+                <div class="empty-state">
+                    <div class="empty-icon">🛒</div>
+                    <h3>Tu carrito está vacío</h3>
+                    <p>Explora nuestra tienda y encuentra productos increíbles</p>
+                    <a href="../Productos/Productos.html" class="btn-explore">
+                        Explorar Productos
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
 
             <div class="continue-shopping">
-                <a href="../Productos/Productos.html">← Continuar comprando</a>
+                <a href="../Productos/Productos.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Continuar comprando
+                </a>
             </div>
         </section>
 
         <!-- Resumen -->
         <aside class="cart-summary-column">
             <div class="summary-card">
-                <h3>Resumen del Pedido</h3>
-
-                <div class="summary-line">
-                    <span>Subtotal</span>
-                    <span id="subtotal-price">$0</span>
+                <div class="summary-header">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="summary-icon">📋</div>
                 </div>
 
-                <div class="summary-line">
-                    <span>Envío</span>
-                    <span>Gratis</span>
+                <div class="summary-body">
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <span id="subtotal-price" class="price-value">$0</span>
+                    </div>
+
+                    <div class="summary-line">
+                        <span>Envío</span>
+                        <span class="free-badge">Gratis</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-line total">
+                        <span>Total</span>
+                        <span id="total-price" class="price-value">$0</span>
+                    </div>
+
+                    <div class="promo-section">
+                        <input type="text" placeholder="Código de descuento" class="promo-input">
+                        <button class="promo-btn">Aplicar</button>
+                    </div>
                 </div>
 
-                <hr>
-
-                <div class="summary-line total">
-                    <span>Total</span>
-                    <span id="total-price">$0</span>
+                <div class="summary-footer">
+                    <a href="../Finalizar_compra/Finalizar_compra.html" class="btn-checkout">
+                        <span>Finalizar Compra</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    
+                    <div class="secure-badges">
+                        <div class="badge-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <span>Pago Seguro</span>
+                        </div>
+                        <div class="badge-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Garantía</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <!-- BOTÓN NUEVO -->
-                <a href="../Finalizar_compra/Finalizar_compra.html" class="btn-checkout">
-                    FINALIZAR COMPRA →
-                </a>
-
-                <p class="secure-payment">🔒 Pago seguro</p>
+            <!-- Trust Badges -->
+            <div class="trust-section">
+                <div class="trust-item">
+                    <div class="trust-icon">🚚</div>
+                    <div class="trust-text">
+                        <strong>Envío Gratis</strong>
+                        <p>En todos los pedidos</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">↩️</div>
+                    <div class="trust-text">
+                        <strong>30 Días</strong>
+                        <p>Devolución garantizada</p>
+                    </div>
+                </div>
             </div>
         </aside>
 
@@ -84,7 +176,14 @@
 </main>
 
 <footer>
-    <p>&copy; 2025 JP Artesanías</p>
+    <div class="footer-content">
+        <p>&copy; 2025 JP Artesanías - Todos los derechos reservados</p>
+        <div class="footer-links">
+            <a href="#">Términos</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Ayuda</a>
+        </div>
+    </div>
 </footer>
 
 <script src="./carrito.js"></script>
