@@ -1,0 +1,217 @@
+/* ==============================
+   VARIABLES GLOBALES (FIX)
+   ============================== */
+:root {
+    --primary-blue: #3498db;
+    --dark-text: #1a1a1a;
+    --border-color: #e5e5e5;
+    --light-gray: #f7f7f7;
+    --transition: all 0.3s ease;
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.8;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    padding: 0 8%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(93, 173, 226, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+/* Logo */
+.logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #5dade2, #3498db);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.logo h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+}
+
+.logo-subtitle {
+    font-size: 0.6em;
+    color: #5dade2;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+/* Botón carrito */
+.cart-button {
+    text-decoration: none;
+    color: white;
+    background: #1a1a1a;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+   ======================================== */
+.cart-main-container {
+    max-width: 1200px;
+    margin: 120px auto 40px;
+    padding: 0 5%;
+}
+
+.cart-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+}
+
+/* Items */
+.cart-items-wrapper {
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 20px;
+    padding: 25px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Resumen */
+.summary-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 130px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.summary-line.total {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* BOTÓN FINALIZAR COMPRA (FIXED) */
+.checkout-button {
+    width: 100%;
+    background: var(--dark-text);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.checkout-button:hover {
+    background: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+.btn-arrow {
+    transition: transform 0.3s;
+}
+
+.checkout-button:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+.secure-payment {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    margin-top: 100px;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .cart-grid {
+        grid-template-columns: 1fr;
+    }
+    .summary-card {
+        position: static;
+    }
+}
