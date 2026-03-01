@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Carrito - JP Artesanías</title>
+    <title>Your Cart - CraftHaven Studio</title>
     <link rel="stylesheet" href="./estilo_pagina_carrito.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Partículas de fondo animadas -->
+<!-- Animated background particles -->
 <div class="particles-bg">
     <div class="particle"></div>
     <div class="particle"></div>
@@ -22,38 +22,35 @@
     <div class="header-container">
             <div class="logo">
                 <a href="../index.html">
-                    <div class="logo-icon">
-                        <img src="../Img/logo.jpeg" alt="JP Artesanías Logo" class="logo-image">
-                    </div>
-                    <h1>JP Artesanías<br><span class="logo-subtitle">Calidad Artesanal</span></h1>
+                    <div class="logo-icon"></div>
+                    <h1>CraftHaven Studio<br><span class="logo-subtitle">Handcrafted Quality</span></h1>
                 </a>
             </div>
 
-
         <nav>
             <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../Productos/Productos.html">Productos</a></li>
-                <li><a href="../Contacto/contactos.html">Contacto</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Productos/Productos.html">Products</a></li>
+                <li><a href="../Contacto/contactos.html">Contact</a></li>
             </ul>
         </nav>
 
         <div class="header-actions">
             <a href="./Carrito/pagina_carrito.html" class="cart-button">
-            🛒 Carrito <span class="cart-count">0</span>
+            🛒 Cart <span class="cart-count">0</span>
         </a>
         </div>
     </div>
 </header>
 
 <main class="cart-main-container">
-    
+
     <!-- Hero Section -->
     <div class="cart-hero">
         <div class="hero-content">
-            <div class="hero-badge">🛍️ Carrito de Compras</div>
-            <h1 class="hero-title">Tu Selección</h1>
-            <p class="hero-subtitle">Revisa y confirma tus productos seleccionados</p>
+            <div class="hero-badge">🛍️ Shopping Cart</div>
+            <h1 class="hero-title">Your Selection</h1>
+            <p class="hero-subtitle">Review and confirm your selected products</p>
         </div>
         <div class="hero-decoration">
             <div class="floating-element"></div>
@@ -63,23 +60,23 @@
 
     <div class="cart-grid">
 
-        <!-- Productos -->
+        <!-- Products -->
         <section class="cart-items-column">
             <div class="section-header">
-                <h2>Productos</h2>
+                <h2>Products</h2>
                 <div class="item-count-badge">
                     <span id="items-count">0</span> items
                 </div>
             </div>
 
             <div id="cart-container" class="cart-items-wrapper">
-                <!-- Los productos se cargarán aquí dinámicamente -->
+                <!-- Products are loaded dynamically here -->
                 <div class="empty-state">
                     <div class="empty-icon">🛒</div>
-                    <h3>Tu carrito está vacío</h3>
-                    <p>Explora nuestra tienda y encuentra productos increíbles</p>
+                    <h3>Your cart is empty</h3>
+                    <p>Explore our store and find incredible products</p>
                     <a href="../Productos/Productos.html" class="btn-explore">
-                        Explorar Productos
+                        Explore Products
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -92,16 +89,16 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
-                    Continuar comprando
+                    Continue shopping
                 </a>
             </div>
         </section>
 
-        <!-- Resumen -->
+        <!-- Summary -->
         <aside class="cart-summary-column">
             <div class="summary-card">
                 <div class="summary-header">
-                    <h3>Resumen del Pedido</h3>
+                    <h3>Order Summary</h3>
                     <div class="summary-icon">📋</div>
                 </div>
 
@@ -112,8 +109,8 @@
                     </div>
 
                     <div class="summary-line">
-                        <span>Envío</span>
-                        <span class="free-badge">Gratis</span>
+                        <span>Shipping</span>
+                        <span class="free-badge">Free</span>
                     </div>
 
                     <div class="summary-divider"></div>
@@ -124,31 +121,31 @@
                     </div>
 
                     <div class="promo-section">
-                        <input type="text" placeholder="Código de descuento" class="promo-input">
-                        <button class="promo-btn">Aplicar</button>
+                        <input type="text" placeholder="Discount code" class="promo-input">
+                        <button class="promo-btn">Apply</button>
                     </div>
                 </div>
 
                 <div class="summary-footer">
                     <a href="../Finalizar_compra/Finalizar_compra.html" class="btn-checkout">
-                        <span>Finalizar Compra</span>
+                        <span>Checkout</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    
+
                     <div class="secure-badges">
                         <div class="badge-item">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                             </svg>
-                            <span>Pago Seguro</span>
+                            <span>Secure Payment</span>
                         </div>
                         <div class="badge-item">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                             </svg>
-                            <span>Garantía</span>
+                            <span>Guarantee</span>
                         </div>
                     </div>
                 </div>
@@ -159,15 +156,15 @@
                 <div class="trust-item">
                     <div class="trust-icon">🚚</div>
                     <div class="trust-text">
-                        <strong>Envío Gratis</strong>
-                        <p>En todos los pedidos</p>
+                        <strong>Free Shipping</strong>
+                        <p>On all orders</p>
                     </div>
                 </div>
                 <div class="trust-item">
                     <div class="trust-icon">↩️</div>
                     <div class="trust-text">
-                        <strong>30 Días</strong>
-                        <p>Devolución garantizada</p>
+                        <strong>30 Days</strong>
+                        <p>Guaranteed returns</p>
                     </div>
                 </div>
             </div>
@@ -178,11 +175,11 @@
 
 <footer>
     <div class="footer-content">
-        <p>&copy; 2025 JP Artesanías - Todos los derechos reservados</p>
+        <p>&copy; 2025 CraftHaven Studio - All rights reserved</p>
         <div class="footer-links">
-            <a href="#">Términos</a>
-            <a href="#">Privacidad</a>
-            <a href="#">Ayuda</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Help</a>
         </div>
     </div>
 </footer>

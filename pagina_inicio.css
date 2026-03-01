@@ -537,23 +537,23 @@ h2::after {
 }
 
 .product-card .first-image {
-    background-image: url('./img/mate-imperial.jpg');
+    background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600&q=80&auto=format&fit=crop');
 }
 
 .product-card .second-image {
-    background-image: url('./img/mate-torpedo.jpg');
+    background-image: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80&auto=format&fit=crop');
 }
 
 .product-card .third-image {
-    background-image: url('./img/mate-camionero.jpg');
+    background-image: url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=600&q=80&auto=format&fit=crop');
 }
 
 .product-card .fourth-image {
-    background-image: url('./img/bombilla-personalizada.jpg');
+    background-image: url('https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80&auto=format&fit=crop');
 }
 
 .product-card .fifth-image {
-    background-image: url('./img/termo-premium.jpg');
+    background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80&auto=format&fit=crop');
 }
 
 .product-card img {
